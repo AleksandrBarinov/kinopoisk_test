@@ -138,6 +138,7 @@ public class MainPage {
 
     public void checkLogInButtonAfterLogOut(){
 
+
         try {
             waits.getWait().until
                     (ExpectedConditions.visibilityOf(logIn));
@@ -148,6 +149,7 @@ public class MainPage {
     }
 
     public void moveToMenu(String menuItem){
+        waits.getWait().until(ExpectedConditions.visibilityOf(userIcon));
 
         Actions builder = new Actions(Hooks.driver);
 

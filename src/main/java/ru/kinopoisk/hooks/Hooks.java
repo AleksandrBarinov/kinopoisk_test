@@ -6,6 +6,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import ru.kinopoisk.pages.MainPage;
 import ru.kinopoisk.util.TestProperties;
 import ru.yandex.qatools.allure.annotations.Attachment;
 
@@ -28,9 +29,24 @@ public class Hooks {
         driver.get(baseUrl);
     }
 
+    @Before(value = "@login")
+    public void beforeFilterTest(){
+        MainPage mainPage = new MainPage(driver);
+
+        mainPage.goToLogin();
+        mainPage.pressAllreadyHaveAccount();
+        mainPage.pressYaButton();
+        mainPage.switchToLogInWindow();
+
+        mainPage.fillField("логин","t3stfirst");
+        mainPage.fillField("пароль","12345Test");
+
+        mainPage.pressLogInFrame();
+    }
+
     @After
     public static void afterTest() {
-        //driver.quit();
+        driver.quit();
     }
 
     @Attachment(type = "image/png")

@@ -11,6 +11,6 @@ public class Waits {
         return wait;
     }
 
-    Wait<WebDriver> wait = new WebDriverWait(Hooks.driver, 15, 1000);
+    Wait<WebDriver> wait = new WebDriverWait(Hooks.driver, 4, 1000);
 
 }

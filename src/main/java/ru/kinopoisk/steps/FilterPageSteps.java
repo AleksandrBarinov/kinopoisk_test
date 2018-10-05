@@ -44,8 +44,8 @@ public class FilterPageSteps {
 
 
     @Step("Минимальное количество оценок {0}")
-    public void setSliderPosition(Integer value){
-        filterPage.setSliderPosition(value);
+    public void setSliderPosition(String menuItem){
+        filterPage.setSliderPosition(menuItem);
     }
 
 

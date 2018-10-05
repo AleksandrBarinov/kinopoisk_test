@@ -107,9 +107,9 @@ public class CucumberSteps {
         filterPageSteps.setPositiveRatingMax(menuItem);
     }
 
-    @When("^Минимальное количество оценок (\\d+)")
-    public void setSliderPosition(Integer value){
-        filterPageSteps.setSliderPosition(value);
+    @When("^Минимальное количество оценок \"(.*)\"$")
+    public void setSliderPosition(String menuItem){
+        filterPageSteps.setSliderPosition(menuItem);
     }
 
 

@@ -136,7 +136,10 @@ public class FilterPage {
     }
 
 
-    public void setSliderPosition(Integer position) {
+    public void setSliderPosition(String menuItem) {
+
+        int position = Integer.parseInt(menuItem);
+
         if (position < 100 || position > 2500) {
             throw new AssertionError(
                     "Slider position value should be in the range of 100 to 2500");
